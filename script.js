@@ -10,12 +10,12 @@ let typeArr = [];
 //todo ---------- Fetching Pokemon ----------
 async function fetchPokemon(){
     let pokemonArray = [];
-    //* fetching API and create a new array here ....
+    //! fetching API and create a new array here ....
     for(let i=1; i<=151; i++){
         pokemonArray.push(fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`).then((res) => res.json()));        
     }
 
-    //* create a new object here .....
+    //! create a new object here .....
     Promise.all(pokemonArray).then((res) => {
         let newPokemonArray = res.map((item) =>{
             return {
@@ -24,12 +24,17 @@ async function fetchPokemon(){
                 name : item.name,
                 type : item.types[0].type.name,
                 back_img : item.sprites.back_default,
-                move1 : item.moves[0].move.name,
-                // move2 : item.moves[1].move.name,
+                move : item.moves[0].move.name,
+                height : item.height,
+                weight : item.weight,
+                game_index : item.game_indices[0].game_index,
+                card_image : item.sprites.front_shiny,
             }
         });
+        // console.log(newPokemonArray);
         pokeArray = newPokemonArray;
-        //* append all the pokemon here .....
+
+        //! append all the pokemon here .....
         for(let i = 0; i < newPokemonArray.length; i++){
             let pokeCard = document.createElement('div');
             pokeCard.innerHTML = `
@@ -44,7 +49,7 @@ async function fetchPokemon(){
             `
             pokemonContainer.appendChild(pokeCard); 
 
-            //* appending types here ......
+            //! appending types here ......
             if(!(typeArr.includes(newPokemonArray[i].type))){
                 typeArr.push(newPokemonArray[i].type);
                 let options = document.createElement('option');
@@ -55,36 +60,40 @@ async function fetchPokemon(){
                 selectType.appendChild(options);
             }
         }
+        //! Displaying pokemon card here .....
         arr = document.querySelectorAll('.eachPokemon');
         arr.forEach((pokemonItem) => {
             pokemonItem.addEventListener('click', () =>{
-                let pokemonDisplay = document.createElement('div');
-                pokemonDisplay.innerHTML = `
-                
-                    <div class="singlecard">
-                        <div class="cardInner">
-                            <div class="front">
-                                <img src="" alt="">
-
-                        <div class="moves">
-                            <div class="moveLeft">
-                                <p>Move1</p>
-                                <p>Move2</p>
+                for(let i = 0; i < newPokemonArray.length; i++){
+                    // pokemonCardDisplay.innerHTML = "";
+                    let pokemonDisplay = document.createElement('div');
+                    pokemonDisplay.innerHTML = `
+                    
+                        <div class="singlecard">
+                            <div class="cardInner">
+                                <div class="front">
+                                    <img src="${newPokemonArray[i].card_image }" alt="">
+                            <div class="moves">
+                                <div class="moveLeft">
+                                    <p>Height : <span>${newPokemonArray[i].height} </span></p>
+                                    <p>Move : <span>${newPokemonArray[i].move} </span></p>
+                                </div>
+                                <div class="moveRight">
+                                    <p>Weight : <span>${newPokemonArray[i].weight} </span> </p>
+                                    <p>game_index : <span>${newPokemonArray[i].game_index} </span></p>
+                                </div>
                             </div>
-                            <div class="moveRight">
-                                <p>Move3</p>
-                                <p>Move4</p>
+                                </div>
+                                <div class="back">
+                                    <img src="${newPokemonArray[i].back_img}" alt="">
+                                    <p>Abilities : <span></span> <span></span></p>
+                                </div>
                             </div>
                         </div>
-                            </div>
-                            <div class="back">
-                                <img src="" alt="">
-                                <p>Abilities : <span></span> <span></span></p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                `
+                    `
+                    pokemonCardDisplay.innerHTML = "";
+                    pokemonCardDisplay.appendChild(pokemonDisplay);
+                }
             });
         });
     });
