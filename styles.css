@@ -1,96 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap");
 
-  @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    width: 100%;
-    font-family: 'Kalam', cursive;
-    /* overflow-y: hidden; */
-    /* background-color: rgb(41, 41, 41); */
+body {
+  width: 100%;
+  font-family: "Kalam", cursive;
+  background-image: linear-gradient(to left, #30cfd0 0%, #330867 100%);
 }
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 
-.pokemonList{
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 0;
-    margin: 1rem;
+.pokemonList {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  margin: 1rem;
 }
-.eachPokemon{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 10px;
-    color: white;
+.eachPokemon {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 6px 8px 18px 0px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
 }
-.appendPoke{
-    /* background-image: url("./heading.png");
-    background-position: center;
-    background-size: cover; */
-    width: 100%;
-    height: 50vh;
-    overflow-y: scroll;
-    padding-right: 1rem;
-    
+.bounceIn {
+  animation-duration: 0.75s;
 }
-::-webkit-scrollbar-track {
-    background-color: #eed535;
+.appendPoke {
+  width: 100%;
+  height: 60vh;
+  overflow-y: scroll;
+  padding-right: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #ff8f45 #d4d4d4;
 }
-.container{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
+.appendPoke::-webkit-scrollbar {
+  width: 14px;
 }
-.id_image{
-    display: flex;
-    gap: 10px;
-    font-size: 20px;
-    font-weight: 600;
+
+.appendPoke::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 8px;
 }
-input, select{
-    width: 90%;
-    position: relative;
-    cursor: text;
-    font-size: 16px;
-    line-height: 20px;
-    padding: 0 16px;
-    height: 48px;
-    background-color: rgb(255,203,5);
-    border: none;
-    border-radius: 5px;
-    color: rgb(35, 38, 59);
-    box-shadow: inset 0 1px 4px 0 rgb(119 122 175 / 30%);
-    overflow: hidden;
-    transition: all 100ms ease-in-out;
-    outline: none;
-    font-weight: 700;
-    font-family: 'Kalam', cursive;
-    color: rgb(77, 104, 163);
+
+.appendPoke::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 203, 5);
+  border-radius: 8px;
+  border: 2px solid #110b0b;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.id_image {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+input,
+select {
+  width: 90%;
+  position: relative;
+  cursor: text;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0 16px;
+  height: 48px;
+  background-color: rgb(255, 203, 5);
+  border: none;
+  border-radius: 5px;
+  color: rgb(35, 38, 59);
+  box-shadow: inset 0 1px 4px 0 rgb(119 122 175 / 30%);
+  overflow: hidden;
+  transition: all 100ms ease-in-out;
+  outline: none;
+  font-weight: 700;
+  font-family: "Kalam", cursive;
+  color: rgb(77, 104, 163);
+  box-shadow: 6px 8px 18px 0px rgba(0, 0, 0, 0.75);
 }
 input:focus {
-    border: 4px solid rgb(77, 104, 163);
-    box-shadow: 0 1px 0 0 rgb(35 38 59 / 5%);
+  box-shadow: 0 1px 0 0 rgb(35 38 59 / 5%);
 }
-input::placeholder{
-    color: crimson;
-    font-size: 16px;
-    font-weight: 700;
-    font-family: 'Kalam', cursive;
+input::placeholder {
+  color: crimson;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Kalam", cursive;
 }
-select{
-    margin: 1rem 0;
-    cursor: pointer;
+select {
+  margin: 1rem 0;
+  cursor: pointer;
 }
 
 button {
@@ -99,18 +115,18 @@ button {
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
-  color: rgb(53, 89, 167);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   border: 3px solid;
   padding: 0.25em 0.5em;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px ;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
   position: relative;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  background-color: rgb(255,203,5);
+  background-color: rgb(255, 203, 5);
   margin-bottom: 1rem;
-
 }
 
 button:active {
@@ -124,134 +140,212 @@ button:active {
     padding: 0.25em 0.75em;
   }
 }
-.typeFilter{
-    display: flex;
-    justify-content: space-around;
+.typeFilter {
+  display: flex;
+  justify-content: space-around;
 }
 
 #grass {
-    background-color: #9bcc50;
+  background-color: #9bcc50;
 }
 
 #bug {
-    background-color: #729f3f;
+  background-color: #729f3f;
 }
 
 #fire {
-    background-color :#fd7d24;
+  background-color: #fd7d24;
 }
 
 #water {
-    background-color: #4592c4;
+  background-color: #4592c4;
 }
 
 #ice {
-    background-color: #51c4e7;
+  background-color: #51c4e7;
 }
 
 #electric {
-    background-color: #eed535;
+  background-color: #eed535;
 }
 
 #psychic {
-    background-color:  #f366b9;
+  background-color: #f366b9;
 }
 
-
 #fairy {
-    background-color: #fdb9e9;
+  background-color: #fdb9e9;
 }
 
 #ghost {
-    background-color: #7b62a3;
+  background-color: #7b62a3;
 }
 
 #ground {
-    background-color: #f7de3f;
+  background-color: #f7de3f;
 }
 
 #poison {
-    background-color: #b97fc9;
+  background-color: #b97fc9;
 }
 
 #fairy {
-    background-color: #fdb9e9;
+  background-color: #fdb9e9;
 }
 
 #normal {
-    background-color: #a4acaf;
+  background-color: #a4acaf;
 }
 
 #dragon {
-    background-color: goldenrod;
+  background-color: goldenrod;
 }
 
 #fighting {
-    background-color: #d56723;
+  background-color: #d56723;
 }
 
 #rock {
-    background-color: #a38c21;
+  background-color: #a38c21;
 }
-.pokemonCard{
-    width: 600px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.pokemonCard {
+  width: 600px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.singlecard{
-    background-color: transparent;
-    perspective: 1000px;
+.singlecard {
+  background-color: transparent;
+  perspective: 1000px;
 }
-.cardInner{
-    position: relative;
-    width: 300px;
-    height: 300px;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+.cardInner {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
-.cardInner .front, .cardInner .back{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 4px solid rgb(52,102,175);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: rgb(255,203,5);
+.cardInner .front,
+.cardInner .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid rgb(52, 102, 175);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(255, 203, 5);
+  box-shadow: 6px 8px 18px 0px rgba(0, 0, 0, 0.75);
 }
 .singlecard:hover .cardInner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
-.front, .back {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+.front,
+.back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.front p {
+  font-size: 12px;
+  font-family: "DM Sans", sans-serif;
+  margin: 1rem 0;
+}
+.front span,
+.back span {
+  color: crimson;
+  font-size: 16px;
+  font-family: "DM Sans", sans-serif;
 }
 .back {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transform: rotateY(180deg);
-    font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: rotateY(180deg);
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
 }
-.moves{
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    font-weight: 700;
+.back p {
+  width: 100%;
+  padding: 0.6rem 0;
+  margin-bottom: 5rem;
+  transform: rotateY(180deg);
+  background-color: rgb(236, 248, 170);
 }
-.singlecard:hover{
-    transform: rotateY(180deg);
+.moves {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  font-weight: 700;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
-@media only screen and (max-width: 768px){
-    .pokemonCard{
-        display: none;
+.singlecard:hover {
+  transform: rotateY(180deg);
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px dashed rgba(255, 255, 255, 0.514);
+  color: rgba(255, 255, 255, 0.541);
+  width: 300px;
+  height: 300px;
+  padding: 0 2rem;
+}
+.preview h2 {
+  text-align: center;
+  font-size: 32px;
+  font-family: "DM Sans", sans-serif;
+}
+@media only screen and (max-width: 768px) {
+    .pokemonList {
+      width: 100%;
     }
-    .pokemonList{
-        width: 100%;
+    .container{
+        flex-wrap: wrap;
     }
-}
+  }

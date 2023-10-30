@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheet  -->
     <link rel="stylesheet" href="./styles.css">
+    <!-- favicon  -->
     <link rel="icon" href="./pokemon-icon.webp">
+    <!-- animation librery  -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>Pokemon Finder</title>
 </head>
 <body>
-    <h1><img src="./heading.png" alt="Pokemon heading" class="nav-heading" width="300px"></h1>
+    <h1 class="animate__animated animate__fadeInDown"><img src="./heading.png" alt="Pokemon heading" class="nav-heading" width="300px"></h1>
     <div class="container">
         <div class="pokemonList">
-            <input type="text" placeholder="Search your Pokemon here ...">
+            <input type="text" placeholder="Search your Pokemon here ..."class= "animate__animated animate__fadeInRight">
             
-                <select name="" id="--Type--" >
+                <select name="" id="--Type--" class= "animate__animated animate__fadeInLeft">
                     <option disabled selected value="">-- Type --</option>
                 </select>
                 
@@ -27,29 +34,10 @@
             </div>
         </div>
         <div class="pokemonCard">
-            <!-- <div class="singlecard">
-                <div class="cardInner">
-                    <div class="front">
-                        <img src="" alt="">
-
-                <div class="moves">
-                    <div class="moveLeft">
-                        <p>Move1</p>
-                        <p>Move2</p>
-                    </div>
-                    <div class="moveRight">
-                        <p>Move3</p>
-                        <p>Move4</p>
-                    </div>
-                </div>
-                    </div>
-                    <div class="back">
-                        <img src="" alt="">
-                        <p>Abilities : <span></span> <span></span></p>
-                    </div>
-                </div>
-                
-            </div> -->
+            <div class="preview">
+                <h2>Display Your Pokemon Here</h2>
+            </div>
+            <!-- append pokemon card here  -->
         </div>
     </div>
     
