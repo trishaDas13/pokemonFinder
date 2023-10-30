@@ -42,7 +42,7 @@ h1 {
   width: 100%;
   height: 60vh;
   overflow-y: scroll;
-  padding-right: 1rem;
+  padding-right: 1.5rem;
   scrollbar-width: thin;
   scrollbar-color: #ff8f45 #d4d4d4;
 }
@@ -235,9 +235,14 @@ button:active {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: rgb(255, 203, 5);
   box-shadow: 6px 8px 18px 0px rgba(0, 0, 0, 0.75);
+  align-items: center;
+  padding: 0.5rem 0;
+}
+.front img, .back img{
+    width: 200px;
 }
 .singlecard:hover .cardInner {
   transform: rotateY(180deg);
@@ -250,7 +255,7 @@ button:active {
 .front p {
   font-size: 12px;
   font-family: "DM Sans", sans-serif;
-  margin: 1rem 0;
+  margin: 0.2rem;
 }
 .front span,
 .back span {
@@ -270,7 +275,7 @@ button:active {
 }
 .back p {
   width: 100%;
-  padding: 0.6rem 0;
+  padding: 1rem 0;
   margin-bottom: 5rem;
   transform: rotateY(180deg);
   background-color: rgb(236, 248, 170);
@@ -278,7 +283,6 @@ button:active {
 .moves {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
   font-weight: 700;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
