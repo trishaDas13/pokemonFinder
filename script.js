@@ -143,7 +143,7 @@ async function displayCard(arr) {
         <div class="singlecard">
             <div class="cardInner">
                 <div class="front">
-                    <img src="${data.sprites.front_shiny}" alt="">
+                    <img src="${data.sprites.front_default}" alt="">
             <div class="moves">
                 <div class="moveLeft">
                     <p>Height : <span>${data.height} </span></p>
